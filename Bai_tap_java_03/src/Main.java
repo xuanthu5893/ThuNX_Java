@@ -172,7 +172,15 @@ public class Main {
         triangle.check();
     }
     static void Ex8(){
-        System.out.println("Comming soon");
+        System.out.println("\nBài 8");
+        String s;
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nhập chuỗi: ");
+        s = scanner. nextLine();
+        WordsEx wordsEx = new WordsEx();
+        int i = wordsEx.countWord(s);
+        System.out.println("Số từ trong chuỗi nhập vào là: " + i);
+
     }
     static void Ex9(){
         System.out.println("Comming soon");
