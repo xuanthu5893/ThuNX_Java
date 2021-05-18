@@ -162,33 +162,51 @@ public class Main {
         n = scanner.nextInt();
         System.out.printf("Bảng cửu chương %d : \n", n);
         for (int i = 1; i <= 10; i++) {
-            System.out.printf("%d x %d = %d \n",n,i,n*i );
+            System.out.printf("%d x %d = %d \n", n, i, n * i);
         }
     }
 
-    static void Ex7(){
+    static void Ex7() {
         System.out.println("\nBài 7");
         Triangle triangle = new Triangle();
         triangle.check();
     }
-    static void Ex8(){
+
+    static void Ex8() {
         System.out.println("\nBài 8");
         String s;
         Scanner scanner = new Scanner(System.in);
         System.out.print("Nhập chuỗi: ");
-        s = scanner. nextLine();
+        s = scanner.nextLine();
         WordsEx wordsEx = new WordsEx();
         int i = wordsEx.countWord(s);
         System.out.println("Số từ trong chuỗi nhập vào là: " + i);
 
     }
-    static void Ex9(){
-        System.out.println("Comming soon");
+
+    static void Ex9() {
+        System.out.println("\nBài 9");
+        String s;
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nhập chuỗi: ");
+        s = scanner.nextLine();
+        WordsEx wordsEx = new WordsEx();
+        int i = wordsEx.count2(s);
+        System.out.println("Số từ trong chuỗi nhập vào là: " + i);
     }
-    static void Ex10(){
-        System.out.println("Comming soon");
+
+    static void Ex10() {
+        System.out.println("\nBài 10");
+        int n;
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nhập số n: ");
+        n = scanner.nextInt();
+        Number_check number_check = new Number_check();
+        int i = number_check.totaldigitNumber(n);
+        System.out.println("Tổng các chữ số của số nguyên " + n + " là: " + i);
     }
-    static void Ex11(){
+
+    static void Ex11() {
         System.out.println("\nBài 11");
         int n;
         Scanner scanner = new Scanner(System.in);
@@ -197,12 +215,14 @@ public class Main {
         PrimeNumber pn = new PrimeNumber();
         pn.phanTach(n);
     }
-    static void Ex12(){
+
+    static void Ex12() {
         System.out.println("\nBài 12");
         GiaiPT pt = new GiaiPT();
         pt.pt_bac1();
     }
-    static void Ex13(){
+
+    static void Ex13() {
         System.out.println("\nBài 13");
         int n;
         Scanner scanner = new Scanner(System.in);
@@ -211,7 +231,8 @@ public class Main {
         Number_check check = new Number_check();
         check.printNumber(n);
     }
-    static void Ex14(){
+
+    static void Ex14() {
         System.out.println("\nBài 14");
         int n;
         Scanner scanner = new Scanner(System.in);
@@ -220,7 +241,8 @@ public class Main {
         Number_check check = new Number_check();
         check.check(n);
     }
-    static void Ex15(){
+
+    static void Ex15() {
         System.out.println("\nBài 15");
         String str = "You only live once, but if you do it right, once is enough";
         System.out.println(str);
@@ -234,7 +256,7 @@ public class Main {
                 check += 1;
             }
         }
-        if (check > 0) System.out.printf("Có %d ký tự \"o\" trong chuỗi\n",check );
+        if (check > 0) System.out.printf("Có %d ký tự \"o\" trong chuỗi\n", check);
         else System.out.println("Không có ký tự o trong chuỗi");
     }
 }

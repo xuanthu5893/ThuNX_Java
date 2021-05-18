@@ -13,4 +13,12 @@ public class WordsEx {
         }
         return count;
     }
+    static int count2(String chuoi1){
+        int count1 = 0;
+        for (int i=1; i<chuoi1.length(); i++){
+            if((chuoi1.charAt(i)=='\n')||(chuoi1.charAt(i)==' ')){
+                count1++;
+            }
+        }return count1;
+    }
 }
