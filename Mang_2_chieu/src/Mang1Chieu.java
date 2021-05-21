@@ -26,14 +26,14 @@ public class Mang1Chieu {
 
         for (int i = 0; i < arr.length; i++) {
             if (primeNumber.checkPrime(arr[i])) {
-                out = out + arr[i];
+                out = out + arr[i] + " ";
                 check++;
                 sum += arr[i];
             }
         }
         if (check > 0) {
             System.out.println("\nCác phần tử là số nguyên tố là: " + out);
-            System.out.println("\nTổng các phần tử là số nguyên tố: " + sum);
+            System.out.println("Tổng các phần tử là số nguyên tố: " + sum);
         } else System.out.println("\nKhông có số nguyên tố nào trong mảng");
 
     }
