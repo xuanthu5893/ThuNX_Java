@@ -11,7 +11,7 @@ public class TestExercises1 {
     }
     @Test
     public void test2(){
-        assertThat(ex1.Uppercase(str)).isEqualTo("You Only Live Once. But If You Do It Right. Once Is Enough ")
+        assertThat(ex1.Uppercase(str)).isEqualTo("You Only Live Once. But If You Do It Right. Once Is Enough")
                 .isNotNull();
     }
     @Test

@@ -15,7 +15,7 @@ public class Exercises_01 {
             str2 = str2 + (j.substring(0, 1).toUpperCase() + j.substring(1).toLowerCase());
             str2 = str2 + " ";
         }
-        return str2;
+        return str2.trim();
     }
     static String Uppercase2(String str){
 
