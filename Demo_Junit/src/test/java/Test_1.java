@@ -1,6 +1,7 @@
 import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.*;
 
 public class Test_1 {
     Caculator caculator = new Caculator();
@@ -9,7 +10,7 @@ public class Test_1 {
     assertEquals(): So sánh 2 giá trị để kiểm tra bằng nhau.
     Test sẽ pass nếu các giá trị bằng nhau.
      */
-    @org.junit.Test
+    @Test
     public void testSum() {
         assertEquals(5, caculator.sum(2, 3));
     }
@@ -18,7 +19,7 @@ public class Test_1 {
     assertNotEquals(): So sánh 2 giá trị để kiểm tra bằng nhau.
     Test sẽ pass nếu các giá trị không bằng nhau.
      */
-    @org.junit.Test
+    @Test
     public void testSum1() {
         assertNotEquals(6, caculator.sum(2, 3));
     }
@@ -28,7 +29,7 @@ public class Test_1 {
     Test sẽ pass nếu 2 mảng là bằng nhau.
     */
 
-    @org.junit.Test
+    @Test
     public void TestAssertArray() {
         assertArrayEquals(new int[]{1, 2, 3}, new int[]{1, 2, 3});
     }
@@ -42,7 +43,7 @@ public class Test_1 {
     assertNotNull(): Để kiểm tra 1 object là notnull.
     Test sẽ pass nếu notnull.
     */
-    @org.junit.Test
+    @Test
     public void TestAssertNull(){
         String a = "Ahihi";
         String b = null;
@@ -60,7 +61,7 @@ public class Test_1 {
     Test sẽ pass nếu trả về giá trị false.
     */
 
-    @org.junit.Test
+    @Test
     public void TestAssertTrue_False(){
         assertTrue(5<8);
         assertFalse(5>8);
@@ -76,7 +77,7 @@ public class Test_1 {
     Test sẽ pass nếu không cùng 1 địa chỉ.
     */
 
-    @org.junit.Test
+    @Test
     public void TestAssertSame(){
         String a = "A";
         String b = a;
