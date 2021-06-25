@@ -1,12 +1,10 @@
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Person> people = new ArrayList<>(List.of(
+        ArrayList<Person> person = new ArrayList<>(List.of(
                 new Person("Vinh", "Vietnam", 28),
                 new Person("Lan", "Vietnam", 24),
                 new Person("John", "USA", 27),
@@ -26,80 +24,51 @@ public class Main {
 
         //1.1 Đếm số người theo từng quốc tịch in ra màn hình
         System.out.println("1.1 Đếm số người theo từng quốc tịch in ra màn hình:");
-        List<String> nationaList = nationalityList(people);
-        for (String n : nationaList) {
-            System.out.println("- " + n + ": " + count(n, people));
-        }
+        bai1(person);
+
         //1.2 Sắp xếp theo tên những người trên 25 tuổi rồi in ra màn hình
         System.out.println("1.2 Sắp xếp theo tên những người trên 25 tuổi rồi in ra màn hình:");
-        ArrayList<Person> people1 = sortByName(people);
-        for (Person p : people1) {
-            if (p.age > 25) System.out.println(p);
-        }
+        bai2(person);
 
         //1.3 Tính trung bình tuổi của người theo từng quốc gia
         System.out.println("1.3 Tính trung bình tuổi của người theo từng quốc gia");
-        DecimalFormat fm = new DecimalFormat("#.#");
-        for (String n : nationaList) {
-            float sumAge = (float) sumAge(n, people);
-            int sumPeople = count(n, people);
-            System.out.println("- " + n + " : " + fm.format(sumAge / sumPeople));
-
-        }
+        bai3(person);
 
         //1.4 In ra màn hình đánh giá tuổi mỗi người
         System.out.println("1.4 In ra màn hình đánh giá tuổi mỗi người");
-        for (Person p : people) {
-            if (p.age < 20) {
-                System.out.println(p + " - nổi loạn");
-            } else if (p.age < 30) {
-                System.out.println(p + " - việc làm");
-            } else if (p.age < 40) {
-                System.out.println(p + " - sự nghiệp");
-            } else System.out.println(p + " - hưởng thụ");
-        }
-
+        bai4(person);
     }
 
-    private static int count(String nationality, ArrayList<Person> person) {
-        int count = 0;
+
+    private static void bai1(List<Person> person) {
+        Work work = new Work();
+        List<String> nationaList = work.nationalityList(person); //Lấy danh sách các quốc gia cho vào 1 list
+        for (String n : nationaList) {
+            System.out.println("- " + n + ": " + work.countPerson(n, person)); //Với mỗi quốc gia gọi hàm lấy số lượng người của quốc gia đấy
+        }
+    }
+
+    private static void bai2(List<Person> person) {
+        Work work = new Work();
+        List<Person> Person = work.sortByName(person); //Sắp xếp lại list person theo tên người
+        for (Person p : Person) {
+            if (p.age > 25) System.out.println(p); //Thằng nào tuổi lớn hơn 25 thì in ra
+        }
+    }
+
+    private static void bai3(List<Person> person) {
+        Work work = new Work();
+        DecimalFormat fm = new DecimalFormat("#.#");
+        List<String> nationaList = work.nationalityList(person);//Lấy danh sách các quốc gia cho vào 1 list
+        for (String n : nationaList) {
+            System.out.println("- " + n + " : " + fm.format(work.averageAge(n, person)));//Gọi hàm tính trung bình tuổi
+        }
+    }
+
+    private static void bai4(List<Person> person) {
+        Work work = new Work();
         for (Person p : person) {
-            if (p.nationality.equals(nationality)) count++;
+            System.out.println(p + work.checkPerson(p));
         }
-        return count;
     }
-
-    private static List nationalityList(ArrayList<Person> person) {
-        List<String> list = new ArrayList<String>();
-        for (Person p : person) {
-            if (!list.contains(p.nationality)) list.add(p.nationality);
-        }
-        return list;
-    }
-
-    private static ArrayList sortByName(ArrayList<Person> person) {
-        ArrayList<Person> list = new ArrayList<>();
-        for (Person p : person) {
-            int size = list.size();
-            if (list.size() == 0) list.add(p);
-            else for (int i = 0; i < size; i++) {
-                if (p.name.compareTo(list.get(i).name) < 0) {
-                    list.add(i, p);
-                    break;
-                } else if (i == size - 1) {
-                    list.add(p);
-                }
-            }
-        }
-        return list;
-    }
-
-    private static int sumAge(String nationality, ArrayList<Person> person) {
-        int sum = 0;
-        for (Person p : person) {
-            if (p.nationality.equals(nationality)) sum = sum + p.age;
-        }
-        return sum;
-    }
-
 }
