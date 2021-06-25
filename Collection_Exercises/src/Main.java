@@ -43,7 +43,7 @@ public class Main {
         for (String n : nationaList) {
             float sumAge = (float) sumAge(n, people);
             int sumPeople = count(n, people);
-            System.out.println(n + " : " + fm.format(sumAge / sumPeople));
+            System.out.println("- " + n + " : " + fm.format(sumAge / sumPeople));
 
         }
 
